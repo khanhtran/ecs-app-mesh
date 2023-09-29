@@ -1,0 +1,20 @@
+{
+    "cluster": "tutorial",
+    "serviceName": "ecs-service-discovery",
+    "taskDefinition": "tutorial-task-def",
+    "serviceRegistries": [
+       {
+          "registryArn": "arn:aws:servicediscovery:us-east-2:657641750194:service/srv-v5yjju5dzqfqncfb"
+       }
+    ],
+    "launchType": "FARGATE",
+    "platformVersion": "LATEST",
+    "networkConfiguration": {
+       "awsvpcConfiguration": {
+          "assignPublicIp": "ENABLED",
+          "securityGroups": [ "sg-05b9eb28277988c95" ],
+          "subnets": [ "subnet-0488f2b2afec8e5a2" ]
+       }
+    },
+    "desiredCount": 1
+}
