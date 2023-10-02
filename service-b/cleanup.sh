@@ -2,22 +2,22 @@
 
 aws servicediscovery deregister-instance \
       --service-id srv-v5yjju5dzqfqncfb \
-      --instance-id dfe8801cedaf4fb7ac61bc5b889ab046
+      --instance-id 
 
 aws servicediscovery delete-service \
       --id srv-v5yjju5dzqfqncfb
 
 aws servicediscovery delete-namespace \
-      --id ns-iun6umd4jp7qrzjt
+      --id ns-o3ptyqjzpouln6cg
 
 aws ecs update-service \
-      --cluster tutorial \
-      --service ecs-service-discovery \
+      --cluster my-cluster \
+      --service service-b \
       --desired-count 0
 
 aws ecs delete-service \
-      --cluster tutorial \
-      --service ecs-service-discovery
+      --cluster my-cluster \
+      --service service-b
 
 aws ecs delete-cluster \
-      --cluster tutorial
+      --cluster my-cluster
